@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Exodus Roleplay</title>
 
+  <!-- Favicon -->
   <link rel="icon" href="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" type="image/jpeg" />
+
+  <!-- Preload de imágenes críticas -->
   <link rel="preload" as="image" href="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
   <link rel="preload" as="image" href="https://github.com/ToxiPain/Uso_Data/blob/main/b227bc858a11ee404975aa6761c78857.jpg?raw=true">
 
+  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Roboto&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
@@ -45,6 +49,7 @@
       align-items: center;
       flex: 1 1 auto;
       min-width: 0;
+      color: white;
     }
 
     .logo-link {
@@ -58,6 +63,10 @@
       height: 48px;
       margin-right: 10px;
       flex-shrink: 0;
+    }
+
+    .logo-text {
+      min-width: 0;
     }
 
     .logo-title {
@@ -118,13 +127,9 @@
       transition: width 0.3s ease-in-out;
     }
 
-    .nav a:hover::after {
+    .nav a:hover::after,
+    .nav a:active::after {
       width: 100%;
-    }
-
-    /* Solución para móviles: elimina línea verde después de hacer clic */
-    .nav a:focus::after {
-      width: 0% !important;
     }
 
     .maintenance {
@@ -212,8 +217,7 @@
       align-items: center;
       justify-content: center;
       gap: 40px;
-      flex-wrap: wrap;
-      flex-direction: row;
+      flex-wrap: nowrap;
     }
 
     .tech-image {
@@ -296,19 +300,20 @@
       }
 
       .tech-container {
-        flex-direction: row;
+        flex-direction: row-reverse;
         flex-wrap: wrap;
         justify-content: center;
         text-align: center;
       }
 
-      .tech-image {
-        max-width: 100%;
-        margin-bottom: 20px;
-      }
-
       .tech-content {
         max-width: 100%;
+        padding: 0 10px;
+      }
+
+      .tech-image {
+        max-width: 90%;
+        margin-bottom: 20px;
       }
     }
   </style>
@@ -372,6 +377,13 @@
       nav.classList.toggle('show');
       btn.classList.toggle('rotate');
     }
+
+    // Para evitar que en móvil se quede la barra hover activa
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('touchend', () => {
+        link.blur(); // remueve foco visual
+      });
+    });
   </script>
 
 </body>
