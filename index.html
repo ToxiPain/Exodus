@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EXODUS Roleplay</title>
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/ToxiPain/Uso_Data/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" type="image/jpeg" />
 
   <!-- Preload de imágenes críticas -->
-  <link rel="preload" as="image" href="https://raw.githubusercontent.com/ToxiPain/Uso_Data/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg" />
-  <link rel="preload" as="image" href="https://raw.githubusercontent.com/ToxiPain/Uso_Data/main/b227bc858a11ee404975aa6761c78857.jpg" />
+  <link rel="preload" as="image" href="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
+  <link rel="preload" as="image" href="https://github.com/ToxiPain/Uso_Data/blob/main/b227bc858a11ee404975aa6761c78857.jpg?raw=true">
 
   <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Roboto&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -45,8 +45,6 @@
     .logo-container {
       display: flex;
       align-items: center;
-      flex: 1 1 auto;
-      min-width: 0;
       color: white;
     }
 
@@ -60,12 +58,6 @@
     .logo-link img {
       height: 48px;
       margin-right: 10px;
-      flex-shrink: 0;
-      border-radius: 50%;
-    }
-
-    .logo-text {
-      min-width: 0;
     }
 
     .logo-title {
@@ -88,9 +80,7 @@
       border: 1px solid #444;
       border-radius: 4px;
       padding: 2px 6px;
-      line-height: 1;
       cursor: pointer;
-      align-self: flex-end;
       transition: transform 0.3s ease;
     }
 
@@ -103,7 +93,6 @@
       flex-wrap: wrap;
       gap: 8px;
       justify-content: flex-end;
-      flex: 1 1 auto;
     }
 
     .nav a {
@@ -114,7 +103,6 @@
       font-size: 14px;
       border: 1px solid #555;
       border-radius: 4px;
-      white-space: nowrap;
     }
 
     .maintenance {
@@ -124,7 +112,6 @@
 
     .maintenance h2 {
       font-size: 32px;
-      margin: 0 0 10px;
     }
 
     .highlight {
@@ -135,21 +122,15 @@
 
     .welcome {
       position: relative;
-      color: white;
       padding: 90px 10vw;
-      z-index: 1;
       overflow: hidden;
-      text-align: left;
     }
 
     .welcome::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url("https://raw.githubusercontent.com/ToxiPain/Uso_Data/main/b227bc858a11ee404975aa6761c78857.jpg") no-repeat center center;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("https://github.com/ToxiPain/Uso_Data/blob/main/b227bc858a11ee404975aa6761c78857.jpg?raw=true") no-repeat center center;
       background-size: cover;
       opacity: 0.35;
       z-index: -1;
@@ -160,7 +141,6 @@
       font-size: 48px;
       color: #00e6b8;
       font-style: italic;
-      margin-bottom: 20px;
     }
 
     .welcome p {
@@ -170,7 +150,6 @@
     }
 
     .button-container {
-      text-align: center;
       margin-top: 30px;
     }
 
@@ -201,13 +180,12 @@
       align-items: center;
       justify-content: center;
       gap: 40px;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
     }
 
     .tech-image {
       max-width: 400px;
       width: 100%;
-      height: auto;
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
@@ -220,11 +198,9 @@
       font-family: 'Great Vibes', cursive;
       font-size: 32px;
       color: #00e6b8;
-      margin-bottom: 16px;
     }
 
     .tech-content p {
-      font-family: 'Roboto', sans-serif;
       font-size: 14px;
       line-height: 1.7;
       margin-bottom: 20px;
@@ -246,12 +222,6 @@
       .header-content {
         flex-direction: column;
         align-items: flex-start;
-        padding: 0;
-      }
-
-      .logo-container {
-        width: 100%;
-        margin-bottom: 2px;
       }
 
       .toggle-button {
@@ -263,10 +233,8 @@
       .nav {
         flex-direction: column;
         width: 100%;
-        overflow: hidden;
         max-height: 0;
         opacity: 0;
-        transform: translateY(-10px);
         pointer-events: none;
         transition: all 0.4s ease;
       }
@@ -274,24 +242,12 @@
       .nav.show {
         max-height: 200px;
         opacity: 1;
-        transform: translateY(0);
         pointer-events: auto;
       }
 
       .nav a {
         width: 100%;
         text-align: center;
-      }
-
-      .tech-container {
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        text-align: center;
-      }
-
-      .tech-image {
-        max-width: 100%;
       }
     }
   </style>
@@ -301,9 +257,9 @@
   <header>
     <div class="header-content">
       <div class="logo-container">
-        <a href="/" class="logo-link">
-          <img src="https://raw.githubusercontent.com/ToxiPain/Uso_Data/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg" alt="Logo Exodus" loading="lazy" />
-          <div class="logo-text">
+        <a href="#" class="logo-link">
+          <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" alt="Logo Exodus" />
+          <div>
             <div class="logo-title">EXODUS Roleplay</div>
             <div class="logo-subtitle">Comunidad de Roleplay</div>
           </div>
@@ -337,7 +293,7 @@
 
   <section class="tech-section" id="tecnicas">
     <div class="tech-container">
-      <img src="https://raw.githubusercontent.com/ToxiPain/Uso_Data/main/personaje-anime-bola-fuego-su-mano-bola-fuego-su-mano-generativa-ai_1034052-19701-9.webp" alt="Técnica elemental" class="tech-image" />
+      <img src="https://github.com/ToxiPain/Uso_Data/blob/main/personaje-anime-bola-fuego-su-mano-bola-fuego-su-mano-generativa-ai_1034052-19701-9.webp?raw=true" alt="Técnica elemental" class="tech-image" />
       <div class="tech-content">
         <h2>Propone una técnica o habilidad <br>elemental para el rol!</h2>
         <p>
