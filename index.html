@@ -122,14 +122,9 @@
       left: 0;
       bottom: 0;
       height: 2px;
-      width: 0%;
-      background-color: #00e6b8;
-      transition: width 0.3s ease-in-out;
-    }
-
-    .nav a:hover::after,
-    .nav a:active::after {
       width: 100%;
+      background-color: #00e6b8;
+      transition: none;
     }
 
     .maintenance {
@@ -300,20 +295,14 @@
       }
 
       .tech-container {
-        flex-direction: row-reverse;
         flex-wrap: wrap;
+        flex-direction: row;
         justify-content: center;
         text-align: center;
       }
 
-      .tech-content {
-        max-width: 100%;
-        padding: 0 10px;
-      }
-
       .tech-image {
-        max-width: 90%;
-        margin-bottom: 20px;
+        max-width: 100%;
       }
     }
   </style>
@@ -377,13 +366,6 @@
       nav.classList.toggle('show');
       btn.classList.toggle('rotate');
     }
-
-    // Para evitar que en móvil se quede la barra hover activa
-    document.querySelectorAll('.nav a').forEach(link => {
-      link.addEventListener('touchend', () => {
-        link.blur(); // remueve foco visual
-      });
-    });
   </script>
 
 </body>
