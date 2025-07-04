@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EXODUS Roleplay</title>
+
+  <!-- Preload de imágenes críticas -->
+  <link rel="preload" as="image" href="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
+  <link rel="preload" as="image" href="https://github.com/ToxiPain/Uso_Data/blob/main/b227bc858a11ee404975aa6761c78857.jpg?raw=true">
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Roboto&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: #0e0e0e;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background-color: #000;
+      padding: 15px 20px;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      flex: 1 1 auto;
+      min-width: 0;
+      color: white;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+    }
+
+    .logo-link img {
+      height: 48px;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      min-width: 0;
+    }
+
+    .logo-title {
+      font-family: 'Rubik Mono One', sans-serif;
+      font-size: 20px;
+      white-space: nowrap;
+    }
+
+    .logo-subtitle {
+      font-size: 10px;
+      color: #aaa;
+      white-space: nowrap;
+    }
+
+    .toggle-button {
+      display: none;
+      font-size: 16px;
+      background-color: #1a1a1a;
+      color: white;
+      border: 1px solid #444;
+      border-radius: 4px;
+      padding: 2px 6px;
+      line-height: 1;
+      cursor: pointer;
+      align-self: flex-end;
+      transition: transform 0.3s ease;
+    }
+
+    .toggle-button.rotate {
+      transform: rotate(180deg);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+      flex: 1 1 auto;
+    }
+
+    .nav a {
+      background: #111;
+      padding: 8px 14px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      border: 1px solid #555;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .maintenance {
+      text-align: center;
+      padding: 30px 20px 0;
+    }
+
+    .maintenance h2 {
+      font-size: 32px;
+      margin: 0 0 10px;
+    }
+
+    .highlight {
+      color: #00e18d;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .welcome {
+      position: relative;
+      color: white;
+      padding: 90px 10vw;
+      z-index: 1;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .welcome::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("https://github.com/ToxiPain/Uso_Data/blob/main/b227bc858a11ee404975aa6761c78857.jpg?raw=true") no-repeat center center;
+      background-size: cover;
+      opacity: 0.35;
+      z-index: -1;
+    }
+
+    .welcome h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      color: #00e6b8;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .welcome p {
+      font-size: 20px;
+      max-width: 900px;
+      line-height: 1.8;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .welcome a {
+      display: inline-block;
+      padding: 14px 28px;
+      border: 2px solid #00e6b8;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .welcome a:hover {
+      background: #00e6b8;
+      color: #000;
+    }
+
+    /* Nueva sección de técnicas */
+    .tech-section {
+      background-color: #000;
+      padding: 60px 10vw;
+      color: white;
+    }
+
+    .tech-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: nowrap;
+    }
+
+    .tech-image {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    .tech-content {
+      max-width: 600px;
+    }
+
+    .tech-content h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 32px;
+      color: #00e6b8;
+      margin-bottom: 16px;
+    }
+
+    .tech-content p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .tech-button {
+      text-decoration: none;
+      color: #00e6b8;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .tech-button:hover {
+      color: #00ffcc;
+      padding-left: 4px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+      }
+
+      .logo-container {
+        width: 100%;
+        margin-bottom: 2px;
+      }
+
+      .toggle-button {
+        display: block;
+        margin-left: auto;
+        margin-bottom: 4px;
+      }
+
+      .nav {
+        flex-direction: column;
+        width: 100%;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: all 0.4s ease;
+      }
+
+      .nav.show {
+        max-height: 200px;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .nav a {
+        width: 100%;
+        text-align: center;
+      }
+
+      .tech-container {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .tech-image {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <div class="logo-container">
+        <a href="https://sites.google.com/uamv.edu.ni/exodus/exodus" class="logo-link">
+          <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" alt="Logo Exodus" loading="lazy" />
+          <div class="logo-text">
+            <div class="logo-title">EXODUS Roleplay</div>
+            <div class="logo-subtitle">Comunidad de Roleplay</div>
+          </div>
+        </a>
+      </div>
+
+      <button class="toggle-button" onclick="toggleNav()" id="toggleBtn">▼</button>
+
+      <nav class="nav" id="navMenu">
+        <a href="#tecnicas">PROPONER TÉCNICAS</a>
+        <a href="#">ESTOY BUSCANDO...</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="maintenance">
+    <h2>❝ Página en mantenimiento ❞</h2>
+    <div class="highlight">¡ESTA PÁGINA SIGUE EN CREACIÓN!</div>
+    <p>Por favor espera para que se añada completamente todo el contenido faltante...</p>
+  </section>
+
+  <section class="welcome">
+    <h1>¡Bienvenido a Exodus Roleplay!</h1>
+    <p>
+      Encontrarás acá toda la información necesaria sobre el mejor rol de WhatsApp ambientado en un mundo vivo y lleno de desafíos con temática de fantasía medieval.
+    </p>
+    <div class="button-container">
+      <a href="https://chat.whatsapp.com/DyRZrrKUORQLjDEXIOi08R" target="_blank">Entrar al grupo!</a>
+    </div>
+  </section>
+
+  <!-- Nueva sección técnica -->
+  <section class="tech-section" id="tecnicas">
+    <div class="tech-container">
+      <img src="https://github.com/ToxiPain/Uso_Data/blob/main/personaje-anime-bola-fuego-su-mano-bola-fuego-su-mano-generativa-ai_1034052-19701-9.webp?raw=true" alt="Técnica elemental" class="tech-image" />
+      <div class="tech-content">
+        <h2>Propone una técnica o habilidad <br>elemental para el rol!</h2>
+        <p>
+          Acá podrás proponer tu propio concepto de habilidad o técnica para el rol, esta será enviada a nuestros administradores para considerar añadirlas al apartado de técnicas oficiales. Una vez acumuladas 5 peticiones de técnicas se elegirá una como ganadora y se darán recompensas dentro de rol.
+        </p>
+        <a href="#formulario" class="tech-button">Ir al formulario ➜</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleNav() {
+      const nav = document.getElementById('navMenu');
+      const btn = document.getElementById('toggleBtn');
+      nav.classList.toggle('show');
+      btn.classList.toggle('rotate');
+    }
+  </script>
+
+</body>
+</html>
