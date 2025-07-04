@@ -102,20 +102,33 @@
     .nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 16px;
       justify-content: flex-end;
       flex: 1 1 auto;
     }
 
     .nav a {
-      background: #111;
-      padding: 8px 14px;
-      color: white;
-      text-decoration: none;
+      position: relative;
+      font-weight: bold;
       font-size: 14px;
-      border: 1px solid #555;
-      border-radius: 4px;
-      white-space: nowrap;
+      text-decoration: none;
+      color: white;
+      padding: 8px 4px;
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0%;
+      background-color: #00e6b8;
+      transition: width 0.3s ease-in-out;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
     }
 
     .maintenance {
@@ -306,7 +319,7 @@
         <a href="#" class="logo-link">
           <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" alt="Logo Exodus" loading="lazy" />
           <div class="logo-text">
-            <div class="logo-title">EXODUS Roleplay</div>
+            <div class="logo-title">Exodus Roleplay</div>
             <div class="logo-subtitle">Comunidad de Roleplay</div>
           </div>
         </a>
