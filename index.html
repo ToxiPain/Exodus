@@ -132,21 +132,21 @@
       width: 100%;
     }
 
-    /* MODIFICACIÓN PARA MÓVILES: LÍNEA VERDE FIJA SIN ANIMACIÓN */
-    @media (hover: none) {
+    /* MODIFICACIÓN PARA MÓVILES Y PANTALLAS TÁCTILES: LÍNEA VERDE FIJA SIN ANIMACIÓN */
+    @media (hover: none), (pointer: coarse) {
       .nav a::after {
         content: '';
         position: absolute;
         left: 0;
         bottom: 0;
         height: 2px;
-        width: 100%;
+        width: 100% !important;
         background-color: #00e6b8;
-        transition: none;
+        transition: none !important;
       }
 
       .nav a:hover::after {
-        width: 100%;
+        width: 100% !important;
       }
     }
 
