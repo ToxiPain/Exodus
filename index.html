@@ -116,15 +116,38 @@
       padding: 8px 4px;
     }
 
+    /* ANIMACIÓN NORMAL PARA PC */
     .nav a::after {
       content: '';
       position: absolute;
       left: 0;
       bottom: 0;
       height: 2px;
-      width: 100%;
+      width: 0%;
       background-color: #00e6b8;
-      transition: none;
+      transition: width 0.3s ease-in-out;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    /* MODIFICACIÓN PARA MÓVILES: LÍNEA VERDE FIJA SIN ANIMACIÓN */
+    @media (hover: none) {
+      .nav a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 100%;
+        background-color: #00e6b8;
+        transition: none;
+      }
+
+      .nav a:hover::after {
+        width: 100%;
+      }
     }
 
     .maintenance {
