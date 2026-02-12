@@ -8,327 +8,15 @@
   <!-- Favicon -->
   <link rel="icon" href="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" type="image/jpeg" />
 
-  <!-- Preload de imágenes críticas -->
+  <!-- Preload -->
   <link rel="preload" as="image" href="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
   <link rel="preload" as="image" href="https://github.com/ToxiPain/Uso_Data/blob/main/b227bc858a11ee404975aa6761c78857.jpg?raw=true">
 
-  <!-- Fuentes -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Roboto&family=Great+Vibes&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background-color: #0e0e0e;
-      font-family: 'Roboto', sans-serif;
-      color: white;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      background-color: #000;
-      padding: 15px 20px;
-    }
-
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      flex: 1 1 auto;
-      min-width: 0;
-      color: white;
-    }
-
-    .logo-link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: white;
-    }
-
-    .logo-link img {
-      height: 48px;
-      margin-right: 10px;
-      flex-shrink: 0;
-    }
-
-    .logo-text {
-      min-width: 0;
-    }
-
-    .logo-title {
-      font-family: 'Rubik Mono One', sans-serif;
-      font-size: 20px;
-      white-space: nowrap;
-    }
-
-    .logo-subtitle {
-      font-size: 10px;
-      color: #aaa;
-      white-space: nowrap;
-    }
-
-    .toggle-button {
-      display: none;
-      font-size: 16px;
-      background-color: #1a1a1a;
-      color: white;
-      border: 1px solid #444;
-      border-radius: 4px;
-      padding: 2px 6px;
-      line-height: 1;
-      cursor: pointer;
-      align-self: flex-end;
-      transition: transform 0.3s ease;
-    }
-
-    .toggle-button.rotate {
-      transform: rotate(180deg);
-    }
-
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: flex-end;
-      flex: 1 1 auto;
-    }
-
-    .nav a {
-      position: relative;
-      font-weight: bold;
-      font-size: 14px;
-      text-decoration: none;
-      color: white;
-      padding: 8px 4px;
-    }
-
-    /* ANIMACIÓN NORMAL PARA PC */
-    .nav a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 2px;
-      width: 0%;
-      background-color: #00e6b8;
-      transition: width 0.3s ease-in-out;
-    }
-
-    .nav a:hover::after {
-      width: 100%;
-    }
-
-    /* MODIFICACIÓN PARA MÓVILES Y PANTALLAS TÁCTILES: LÍNEA VERDE FIJA SIN ANIMACIÓN */
-    @media (hover: none), (pointer: coarse) {
-      .nav a::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 2px;
-        width: 100% !important;
-        background-color: #00e6b8;
-        transition: none !important;
-      }
-
-      .nav a:hover::after {
-        width: 100% !important;
-      }
-    }
-
-    .maintenance {
-      text-align: center;
-      padding: 30px 20px 0;
-    }
-
-    .maintenance h2 {
-      font-size: 32px;
-      margin: 0 0 10px;
-    }
-
-    .highlight {
-      color: #00e18d;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .welcome {
-      position: relative;
-      color: white;
-      padding: 90px 10vw;
-      z-index: 1;
-      overflow: hidden;
-      text-align: left;
-    }
-
-    .welcome::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url("https://github.com/ToxiPain/Uso_Data/blob/main/b227bc858a11ee404975aa6761c78857.jpg?raw=true") no-repeat center center;
-      background-size: cover;
-      opacity: 0.35;
-      z-index: -1;
-    }
-
-    .welcome h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 48px;
-      color: #00e6b8;
-      font-style: italic;
-      margin-bottom: 20px;
-    }
-
-    .welcome p {
-      font-size: 20px;
-      max-width: 900px;
-      line-height: 1.8;
-    }
-
-    .button-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
-    .welcome a {
-      display: inline-block;
-      padding: 14px 28px;
-      border: 2px solid #00e6b8;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-
-    .welcome a:hover {
-      background: #00e6b8;
-      color: #000;
-    }
-
-    .tech-section {
-      background-color: #000;
-      padding: 60px 10vw;
-      color: white;
-    }
-
-    .tech-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: nowrap;
-    }
-
-    .tech-image {
-      max-width: 400px;
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
-    }
-
-    .tech-content {
-      max-width: 600px;
-    }
-
-    .tech-content h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 32px;
-      color: #00e6b8;
-      margin-bottom: 16px;
-    }
-
-    .tech-content p {
-      font-family: 'Roboto', sans-serif;
-      font-size: 14px;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .tech-button {
-      text-decoration: none;
-      color: #00e6b8;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .tech-button:hover {
-      color: #00ffcc;
-      padding-left: 4px;
-    }
-
-    @media (max-width: 768px) {
-      .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0;
-      }
-
-      .logo-container {
-        width: 100%;
-        margin-bottom: 2px;
-      }
-
-      .toggle-button {
-        display: block;
-        margin-left: auto;
-        margin-bottom: 4px;
-      }
-
-      .nav {
-        flex-direction: column;
-        width: 100%;
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-        transform: translateY(-10px);
-        pointer-events: none;
-        transition: all 0.4s ease;
-      }
-
-      .nav.show {
-        max-height: 200px;
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-      }
-
-      .nav a {
-        width: 100%;
-        text-align: center;
-      }
-
-      .tech-container {
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        text-align: center;
-      }
-
-      .tech-image {
-        max-width: 100%;
-      }
-    }
-  </style>
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -344,7 +32,7 @@
         </a>
       </div>
 
-      <button class="toggle-button" onclick="toggleNav()" id="toggleBtn">▼</button>
+      <button class="toggle-button" id="toggleBtn">▼</button>
 
       <nav class="nav" id="navMenu">
         <a href="#tecnicas">PROPONER TÉCNICAS</a>
@@ -375,21 +63,14 @@
       <div class="tech-content">
         <h2>Propone una técnica o habilidad <br>elemental para el rol!</h2>
         <p>
-          Acá podrás proponer tu propio concepto de habilidad o técnica para el rol, esta será enviada a nuestros administradores para considerar añadirlas al apartado de técnicas oficiales. Una vez acumuladas 5 peticiones de técnicas se elegirá una como ganadora y se darán recompensas dentro de rol.
+          Acá podrás proponer tu propio concepto de habilidad o técnica para el rol.
         </p>
         <a href="#formulario" class="tech-button">Ir al formulario ➜</a>
       </div>
     </div>
   </section>
 
-  <script>
-    function toggleNav() {
-      const nav = document.getElementById('navMenu');
-      const btn = document.getElementById('toggleBtn');
-      nav.classList.toggle('show');
-      btn.classList.toggle('rotate');
-    }
-  </script>
-
+  <!-- JS externo -->
+  <script src="js/script.js"></script>
 </body>
 </html>
