@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Exodus Roleplay</title>
+  <title>Fundational Chaos</title>
 
-  <!-- Favicon -->
+  <!-- Favicon (puedes cambiarlo si quieres) -->
   <link rel="icon" href="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" type="image/jpeg" />
 
-  <!-- Preload de imágenes críticas -->
-  <link rel="preload" as="image" href="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
-  <link rel="preload" as="image" href="https://github.com/ToxiPain/Uso_Data/blob/main/b227bc858a11ee404975aa6761c78857.jpg?raw=true">
-
   <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Roboto&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -70,13 +66,14 @@
     }
 
     .logo-title {
-      font-family: 'Rubik Mono One', sans-serif;
-      font-size: 20px;
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      letter-spacing: 2px;
       white-space: nowrap;
     }
 
     .logo-subtitle {
-      font-size: 10px;
+      font-size: 11px;
       color: #aaa;
       white-space: nowrap;
     }
@@ -116,7 +113,6 @@
       padding: 8px 4px;
     }
 
-    /* ANIMACIÓN NORMAL PARA PC */
     .nav a::after {
       content: '';
       position: absolute;
@@ -124,7 +120,7 @@
       bottom: 0;
       height: 2px;
       width: 0%;
-      background-color: #00e6b8;
+      background-color: #8b0000;
       transition: width 0.3s ease-in-out;
     }
 
@@ -132,21 +128,10 @@
       width: 100%;
     }
 
-    /* MODIFICACIÓN PARA MÓVILES Y PANTALLAS TÁCTILES: LÍNEA VERDE FIJA SIN ANIMACIÓN */
     @media (hover: none), (pointer: coarse) {
       .nav a::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 2px;
         width: 100% !important;
-        background-color: #00e6b8;
         transition: none !important;
-      }
-
-      .nav a:hover::after {
-        width: 100% !important;
       }
     }
 
@@ -158,10 +143,11 @@
     .maintenance h2 {
       font-size: 32px;
       margin: 0 0 10px;
+      font-family: 'Cinzel', serif;
     }
 
     .highlight {
-      color: #00e18d;
+      color: #b22222;
       font-weight: bold;
       margin-bottom: 10px;
     }
@@ -169,7 +155,7 @@
     .welcome {
       position: relative;
       color: white;
-      padding: 90px 10vw;
+      padding: 100px 10vw;
       z-index: 1;
       overflow: hidden;
       text-align: left;
@@ -189,29 +175,29 @@
     }
 
     .welcome h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 48px;
-      color: #00e6b8;
-      font-style: italic;
-      margin-bottom: 20px;
+      font-family: 'Cinzel', serif;
+      font-size: 52px;
+      letter-spacing: 3px;
+      color: #b22222;
+      margin-bottom: 25px;
     }
 
     .welcome p {
       font-size: 20px;
       max-width: 900px;
-      line-height: 1.8;
+      line-height: 1.9;
     }
 
     .button-container {
       display: flex;
       justify-content: center;
-      margin-top: 30px;
+      margin-top: 40px;
     }
 
     .welcome a {
       display: inline-block;
       padding: 14px 28px;
-      border: 2px solid #00e6b8;
+      border: 2px solid #b22222;
       color: white;
       text-decoration: none;
       font-weight: bold;
@@ -220,7 +206,7 @@
     }
 
     .welcome a:hover {
-      background: #00e6b8;
+      background: #b22222;
       color: #000;
     }
 
@@ -251,14 +237,13 @@
     }
 
     .tech-content h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 32px;
-      color: #00e6b8;
+      font-family: 'Cinzel', serif;
+      font-size: 30px;
+      color: #b22222;
       margin-bottom: 16px;
     }
 
     .tech-content p {
-      font-family: 'Roboto', sans-serif;
       font-size: 14px;
       line-height: 1.7;
       margin-bottom: 20px;
@@ -266,17 +251,18 @@
 
     .tech-button {
       text-decoration: none;
-      color: #00e6b8;
+      color: #b22222;
       font-weight: bold;
       transition: all 0.3s ease;
     }
 
     .tech-button:hover {
-      color: #00ffcc;
+      color: #ff4d4d;
       padding-left: 4px;
     }
 
     @media (max-width: 768px) {
+
       .header-content {
         flex-direction: column;
         align-items: flex-start;
@@ -330,66 +316,72 @@
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="header-content">
-      <div class="logo-container">
-        <a href="#" class="logo-link">
-          <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" alt="Logo Exodus" loading="lazy" />
-          <div class="logo-text">
-            <div class="logo-title">Exodus Roleplay</div>
-            <div class="logo-subtitle">Comunidad de Roleplay</div>
-          </div>
-        </a>
-      </div>
-
-      <button class="toggle-button" onclick="toggleNav()" id="toggleBtn">▼</button>
-
-      <nav class="nav" id="navMenu">
-        <a href="#tecnicas">PROPONER TÉCNICAS</a>
-        <a href="#">ESTOY BUSCANDO...</a>
-      </nav>
+<header>
+  <div class="header-content">
+    <div class="logo-container">
+      <a href="#" class="logo-link">
+        <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" alt="Logo Fundational Chaos" />
+        <div class="logo-text">
+          <div class="logo-title">Fundational Chaos</div>
+          <div class="logo-subtitle">Comunidad de Roleplay</div>
+        </div>
+      </a>
     </div>
-  </header>
 
-  <section class="maintenance">
-    <h2>❝ Página en mantenimiento ❞</h2>
-    <div class="highlight">¡ESTA PÁGINA SIGUE EN CREACIÓN!</div>
-    <p>Por favor espera para que se añada completamente todo el contenido faltante...</p>
-  </section>
+    <button class="toggle-button" onclick="toggleNav()" id="toggleBtn">▼</button>
 
-  <section class="welcome">
-    <h1>¡Bienvenido a Exodus Roleplay!</h1>
-    <p>
-      Encontrarás acá toda la información necesaria sobre el mejor rol de WhatsApp ambientado en un mundo vivo y lleno de desafíos con temática de fantasía medieval.
-    </p>
-    <div class="button-container">
-      <a href="https://chat.whatsapp.com/DyRZrrKUORQLjDEXIOi08R" target="_blank">Entrar al grupo!</a>
+    <nav class="nav" id="navMenu">
+      <a href="#tecnicas">PROPONER TÉCNICAS</a>
+      <a href="#">ESTOY BUSCANDO...</a>
+    </nav>
+  </div>
+</header>
+
+<section class="maintenance">
+  <h2>❝ Página en mantenimiento ❞</h2>
+  <div class="highlight">¡ESTA PÁGINA SIGUE EN CREACIÓN!</div>
+  <p>Por favor espera para que se añada completamente todo el contenido faltante...</p>
+</section>
+
+<section class="welcome">
+  <h1>Bienvenido a Fundational Chaos</h1>
+  <p>
+    En estas tierras donde el destino y el caos se entrelazan, hallarás toda la información necesaria
+    para formar parte de una comunidad de roleplay ambientada en un mundo vivo, desafiante y forjado
+    bajo una atmósfera de fantasía medieval.
+  </p>
+
+  <div class="button-container">
+    <a href="https://chat.whatsapp.com/DyRZrrKUORQLjDEXIOi08R" target="_blank">Entrar al grupo</a>
+  </div>
+</section>
+
+<section class="tech-section" id="tecnicas">
+  <div class="tech-container">
+    <img src="https://github.com/ToxiPain/Uso_Data/blob/main/personaje-anime-bola-fuego-su-mano-bola-fuego-su-mano-generativa-ai_1034052-19701-9.webp?raw=true" alt="Técnica elemental" class="tech-image" />
+    <div class="tech-content">
+      <h2>Propone una técnica o habilidad elemental</h2>
+      <p>
+        Aquí podrás proponer tu propio concepto de habilidad o técnica para el rol.
+        Será enviada a nuestros administradores para considerar añadirla al apartado oficial.
+        Una vez acumuladas 5 propuestas, se elegirá una como ganadora y se otorgarán recompensas dentro del rol.
+      </p>
+      <a href="#formulario" class="tech-button">Ir al formulario ➜</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="tech-section" id="tecnicas">
-    <div class="tech-container">
-      <img src="https://github.com/ToxiPain/Uso_Data/blob/main/personaje-anime-bola-fuego-su-mano-bola-fuego-su-mano-generativa-ai_1034052-19701-9.webp?raw=true" alt="Técnica elemental" class="tech-image" />
-      <div class="tech-content">
-        <h2>Propone una técnica o habilidad <br>elemental para el rol!</h2>
-        <p>
-          Acá podrás proponer tu propio concepto de habilidad o técnica para el rol, esta será enviada a nuestros administradores para considerar añadirlas al apartado de técnicas oficiales. Una vez acumuladas 5 peticiones de técnicas se elegirá una como ganadora y se darán recompensas dentro de rol.
-        </p>
-        <a href="#formulario" class="tech-button">Ir al formulario ➜</a>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    function toggleNav() {
-      const nav = document.getElementById('navMenu');
-      const btn = document.getElementById('toggleBtn');
-      nav.classList.toggle('show');
-      btn.classList.toggle('rotate');
-    }
-  </script>
+<script>
+  function toggleNav() {
+    const nav = document.getElementById('navMenu');
+    const btn = document.getElementById('toggleBtn');
+    nav.classList.toggle('show');
+    btn.classList.toggle('rotate');
+  }
+</script>
 
 </body>
 </html>
