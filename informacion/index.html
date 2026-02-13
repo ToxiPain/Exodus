@@ -189,7 +189,8 @@ header {
 <header>
   <div class="header-content">
     <div class="logo-container">
-      <a href="./" class="logo-link">
+      <!-- CAMBIADO: ahora vuelve al inicio correctamente -->
+      <a href="../" class="logo-link">
         <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" alt="Logo">
         <div>
           <div class="logo-title">Fundational Chaos</div>
@@ -201,7 +202,8 @@ header {
     <button class="toggle-button" onclick="toggleNav()" id="toggleBtn">▼</button>
 
     <nav class="nav" id="navMenu">
-      <a href="./">INICIO</a>
+      <!-- CAMBIADO: ahora vuelve al inicio correctamente -->
+      <a href="../">INICIO</a>
       <a href="#">PROPONER TÉCNICAS</a>
       <a href="#">ESTOY BUSCANDO...</a>
     </nav>
@@ -213,19 +215,12 @@ header {
 </section>
 
 <script>
-
-/* LIMPIA index.html DE LA URL */
-if (window.location.pathname.endsWith("index.html")) {
-  history.replaceState(null, null, window.location.pathname.replace("index.html", ""));
-}
-
 function toggleNav() {
   const nav = document.getElementById('navMenu');
   const btn = document.getElementById('toggleBtn');
   nav.classList.toggle('show');
   btn.classList.toggle('rotate');
 }
-
 </script>
 
 </body>
