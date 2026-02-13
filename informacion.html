@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Información - Fundational Chaos</title>
+
+<link rel="icon" href="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" type="image/jpeg" />
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+  --main-yellow: #f3ff07;
+  --brown-bg: #1a1410;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+/* HEADER */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #000;
+  padding: 15px 20px;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.logo-link img {
+  height: 48px;
+  margin-right: 10px;
+}
+
+.logo-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.logo-subtitle {
+  font-size: 11px;
+  color: #aaa;
+}
+
+/* NAV */
+
+.toggle-button {
+  display: none;
+  font-size: 16px;
+  background-color: #1a1a1a;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 2px 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.toggle-button.rotate {
+  transform: rotate(180deg);
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+}
+
+.nav a {
+  position: relative;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+  padding: 8px 4px;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: var(--main-yellow);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* MAIN SECTION */
+
+.info-section {
+  background-color: var(--brown-bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.info-section h1 {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: 60px;
+  color: var(--main-yellow);
+  letter-spacing: 3px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toggle-button {
+    display: block;
+    margin-left: auto;
+    margin-bottom: 4px;
+  }
+
+  .nav {
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: all 0.4s ease;
+  }
+
+  .nav.show {
+    max-height: 200px;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .info-section h1 {
+    font-size: 38px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-content">
+    <div class="logo-container">
+      <a href="index.html" class="logo-link">
+        <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" alt="Logo">
+        <div>
+          <div class="logo-title">Fundational Chaos</div>
+          <div class="logo-subtitle">Comunidad de Roleplay</div>
+        </div>
+      </a>
+    </div>
+
+    <button class="toggle-button" onclick="toggleNav()" id="toggleBtn">▼</button>
+
+    <nav class="nav" id="navMenu">
+      <a href="index.html">INICIO</a>
+      <a href="#">PROPONER TÉCNICAS</a>
+      <a href="#">ESTOY BUSCANDO...</a>
+    </nav>
+  </div>
+</header>
+
+<section class="info-section">
+  <h1>Información</h1>
+</section>
+
+<script>
+function toggleNav() {
+  const nav = document.getElementById('navMenu');
+  const btn = document.getElementById('toggleBtn');
+  nav.classList.toggle('show');
+  btn.classList.toggle('rotate');
+}
+</script>
+
+</body>
+</html>
