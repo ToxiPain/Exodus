@@ -140,7 +140,7 @@ header {
   font-weight: bold;
 }
 
-/* WELCOME */
+/* WELCOME SECTION */
 
 .welcome {
   position: relative;
@@ -160,11 +160,14 @@ header {
   background: url("https://github.com/ToxiPain/Uso_Data/blob/d68b8b2674c5f8098623482d1f458eef47edbbbf/adbf1ead-fa99-494c-b47c-d996f677e6aa.jpg?raw=true");
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   opacity: 0.30;
+  z-index: 0;
 }
 
 .welcome-content {
   position: relative;
+  z-index: 1;
   max-width: 900px;
   width: 100%;
 }
@@ -174,6 +177,15 @@ header {
   font-weight: 900;
   font-size: 56px;
   color: var(--main-yellow);
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+@media (min-width: 769px) {
+  .welcome h1 span {
+    display: block;
+  }
 }
 
 .welcome p {
@@ -191,7 +203,7 @@ header {
   margin-top: 40px;
 }
 
-.main-button {
+.welcome a.main-button {
   padding: 14px 28px;
   border: 2px solid var(--main-yellow);
   color: white;
@@ -201,10 +213,12 @@ header {
   transition: 0.3s;
 }
 
-.main-button:hover {
+.welcome a.main-button:hover {
   background: var(--main-yellow);
   color: black;
 }
+
+/* NUEVO: MÁS INFORMACIÓN */
 
 .more-info {
   margin-top: 18px;
@@ -213,9 +227,14 @@ header {
   font-size: 14px;
   color: var(--main-yellow);
   text-decoration: none;
+  letter-spacing: 1px;
 }
 
-/* ================= EXPLORA ================= */
+.more-info:hover {
+  text-decoration: underline;
+}
+
+/* ================= EXPLORA SECTION ================= */
 
 .explora-section {
   background: lab(2.66% 0.7 1.53);
@@ -244,17 +263,16 @@ header {
   overflow: hidden;
   border-radius: 6px;
   cursor: pointer;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease; /* AGREGADO */
 }
 
 .explora-card img {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  transition: transform 0.5s ease, filter 0.5s ease;
+  display: block;
+  transition: transform 0.5s ease, filter 0.5s ease; /* AGREGADO */
 }
-
-/* TEXTO */
 
 .explora-text {
   position: absolute;
@@ -264,10 +282,10 @@ header {
   padding: 12px;
   font-weight: bold;
   font-size: 16px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease; /* AGREGADO */
 }
 
-/* ===== ANIMACIÓN HOVER PC ===== */
+/* ===== ANIMACIÓN HOVER ===== */
 
 .explora-card:hover {
   transform: translateY(-8px) scale(1.02);
@@ -284,7 +302,7 @@ header {
   color: black;
 }
 
-/* ===== ANIMACIÓN TAP CELULAR ===== */
+/* ===== ANIMACIÓN TOUCH ===== */
 
 .explora-card:active {
   transform: scale(0.96);
@@ -294,9 +312,15 @@ header {
 
 @media (max-width: 768px) {
 
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .toggle-button {
     display: block;
     margin-left: auto;
+    margin-bottom: 4px;
   }
 
   .nav {
@@ -315,6 +339,11 @@ header {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+  }
+
+  .welcome {
+    min-height: 100vh;
+    padding: 100px 15px 30px 15px;
   }
 
   .welcome h1 {
@@ -338,10 +367,9 @@ header {
 
 <header>
   <div class="header-content">
-
     <div class="logo-container">
       <a href="./" class="logo-link">
-        <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
+        <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" alt="Logo">
         <div>
           <div class="logo-title">Fundational Chaos</div>
           <div class="logo-subtitle">Comunidad de Roleplay</div>
@@ -352,11 +380,9 @@ header {
     <button class="toggle-button" onclick="toggleNav()" id="toggleBtn">▼</button>
 
     <nav class="nav" id="navMenu">
-        <a href="../">INICIO</a>
-      <a href="https://toxipain.github.io/Fundational_Chaos/lista_personajes/">LISTA DE PERSONAJES</a>
+  <a href="https://toxipain.github.io/Fundational_Chaos/lista_personajes/">LISTA DE PERSONAJES</a>
       <a href="#">ESTOY BUSCANDO...</a>
     </nav>
-
   </div>
 </header>
 
@@ -367,33 +393,33 @@ header {
 
 <section class="welcome">
   <div class="welcome-content">
-
-    <h1>Bienvenido a <span>Fundational Chaos</span></h1>
-
+    <h1>
+      Bienvenido a <span>Fundational Chaos</span>
+    </h1>
     <p>
-      Se parte de un mundo donde los nombres que marcaron la historia ya no pertenecen a los libros, en Fundational Chaos son parte de un mundo caotico donde se disputa la dominancia y el control de las calles... Una carrera por la gloria entre facciones desde crimen organizado, terrorismo, gobierno, investigadores, elites y mucho mas.
+      Se parte de un mundo donde los nombres que marcaron la historia ya no pertenecen a los libros, en Fundational Chaos son parte de un mundo caotico 
+      donde se disputa la dominancia y el control de las calles... Una carrera por la gloria entre facciones desde crimen organizado, terrorismo, gobierno, investigadores, elites y mucho mas. 
     </p>
 
     <div class="button-container">
       <a href="https://chat.whatsapp.com/CI42uWkG2RaBHymWi2Z40x" target="_blank" class="main-button">Entrar al grupo</a>
+
+      <!-- NUEVO -->
       <a href="informacion/" class="more-info">Más información...</a>
     </div>
-
   </div>
 </section>
 
-<!-- EXPLORA -->
-
 <section class="explora-section">
-
   <div class="explora-title">Explora:</div>
-
   <div class="explora-grid">
 
-    <!-- SECCIÓN 1 -->
-    <a class="explora-card" href="https://toxipain.github.io/Fundational_Chaos/lista_personajes/">
-      <img src="https://github.com/ToxiPain/Uso_Data/blob/22926da59826da599c199ba58e28b2e4750e574c/9a06ac11-ff6d-4394-b38d-61249785b13f.jpg?raw=true">
-      <div class="explora-text">Lista de Personajes</div>
+    <!-- SOLO SECCIÓN 1 ES LINK -->
+    <a href="https://toxipain.github.io/Fundational_Chaos/lista_personajes/" style="text-decoration:none; color:inherit;">
+      <div class="explora-card">
+        <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
+        <div class="explora-text">Sección 1</div>
+      </div>
     </a>
 
     <div class="explora-card">
@@ -412,14 +438,25 @@ header {
     </div>
 
   </div>
-
 </section>
 
 <script>
 
+/* LIMPIA index.html DE LA URL */
+if (window.location.pathname.endsWith("index.html")) {
+  history.replaceState(null, null, window.location.pathname.replace("index.html", ""));
+}
+
+/* LIMPIA informacion.html DE LA URL */
+if (window.location.pathname.endsWith("informacion.html")) {
+  history.replaceState(null, null, window.location.pathname.replace("informacion.html", "informacion/"));
+}
+
 function toggleNav() {
-  document.getElementById('navMenu').classList.toggle('show');
-  document.getElementById('toggleBtn').classList.toggle('rotate');
+  const nav = document.getElementById('navMenu');
+  const btn = document.getElementById('toggleBtn');
+  nav.classList.toggle('show');
+  btn.classList.toggle('rotate');
 }
 
 </script>
