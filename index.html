@@ -1,320 +1,320 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fundational Chaos</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fundational Chaos</title>
 
-  <!-- Favicon (puedes cambiarlo si quieres) -->
-  <link rel="icon" href="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" type="image/jpeg" />
+<link rel="icon" href="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" type="image/jpeg" />
 
-  <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      margin: 0;
-      background-color: #0e0e0e;
-      font-family: 'Roboto', sans-serif;
-      color: white;
-    }
+:root {
+  --main-yellow: #f3ff07;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      background-color: #000;
-      padding: 15px 20px;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-    }
+body {
+  margin: 0;
+  background-color: #000;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      flex: 1 1 auto;
-      min-width: 0;
-      color: white;
-    }
+/* HEADER */
 
-    .logo-link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: white;
-    }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #000;
+  padding: 15px 20px;
+}
 
-    .logo-link img {
-      height: 48px;
-      margin-right: 10px;
-      flex-shrink: 0;
-    }
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    .logo-text {
-      min-width: 0;
-    }
+.logo-container {
+  display: flex;
+  align-items: center;
+}
 
-    .logo-title {
-      font-family: 'Cinzel', serif;
-      font-size: 22px;
-      letter-spacing: 2px;
-      white-space: nowrap;
-    }
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
 
-    .logo-subtitle {
-      font-size: 11px;
-      color: #aaa;
-      white-space: nowrap;
-    }
+.logo-link img {
+  height: 48px;
+  margin-right: 10px;
+}
 
-    .toggle-button {
-      display: none;
-      font-size: 16px;
-      background-color: #1a1a1a;
-      color: white;
-      border: 1px solid #444;
-      border-radius: 4px;
-      padding: 2px 6px;
-      line-height: 1;
-      cursor: pointer;
-      align-self: flex-end;
-      transition: transform 0.3s ease;
-    }
+.logo-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
 
-    .toggle-button.rotate {
-      transform: rotate(180deg);
-    }
+.logo-subtitle {
+  font-size: 11px;
+  color: #aaa;
+}
 
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: flex-end;
-      flex: 1 1 auto;
-    }
+/* NAV */
 
-    .nav a {
-      position: relative;
-      font-weight: bold;
-      font-size: 14px;
-      text-decoration: none;
-      color: white;
-      padding: 8px 4px;
-    }
+.toggle-button {
+  display: none;
+  font-size: 16px;
+  background-color: #1a1a1a;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 2px 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
 
-    .nav a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 2px;
-      width: 0%;
-      background-color: #8b0000;
-      transition: width 0.3s ease-in-out;
-    }
+.toggle-button.rotate {
+  transform: rotate(180deg);
+}
 
-    .nav a:hover::after {
-      width: 100%;
-    }
+.nav {
+  display: flex;
+  gap: 16px;
+}
 
-    @media (hover: none), (pointer: coarse) {
-      .nav a::after {
-        width: 100% !important;
-        transition: none !important;
-      }
-    }
+.nav a {
+  position: relative;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+  padding: 8px 4px;
+}
 
-    .maintenance {
-      text-align: center;
-      padding: 30px 20px 0;
-    }
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: var(--main-yellow);
+  transition: width 0.3s ease-in-out;
+}
 
-    .maintenance h2 {
-      font-size: 32px;
-      margin: 0 0 10px;
-      font-family: 'Cinzel', serif;
-    }
+.nav a:hover::after {
+  width: 100%;
+}
 
-    .highlight {
-      color: #b22222;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
+/* MAINTENANCE */
 
-    .welcome {
-      position: relative;
-      color: white;
-      padding: 100px 10vw;
-      z-index: 1;
-      overflow: hidden;
-      text-align: left;
-    }
+.maintenance {
+  text-align: center;
+  padding: 15px 20px;
+  background-color: #121212;
+}
 
-    .welcome::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url("https://github.com/ToxiPain/Uso_Data/blob/main/b227bc858a11ee404975aa6761c78857.jpg?raw=true") no-repeat center center;
-      background-size: cover;
-      opacity: 0.35;
-      z-index: -1;
-    }
+.maintenance h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  margin: 5px 0;
+}
 
-    .welcome h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 52px;
-      letter-spacing: 3px;
-      color: #b22222;
-      margin-bottom: 25px;
-    }
+.highlight {
+  color: var(--main-yellow);
+  font-weight: bold;
+}
 
-    .welcome p {
-      font-size: 20px;
-      max-width: 900px;
-      line-height: 1.9;
-    }
+/* WELCOME SECTION */
 
-    .button-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 40px;
-    }
+.welcome {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 120px 20px 40px 20px;
+  text-align: center;
+  overflow: hidden;
+}
 
-    .welcome a {
-      display: inline-block;
-      padding: 14px 28px;
-      border: 2px solid #b22222;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
+.welcome::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://github.com/ToxiPain/Uso_Data/blob/d68b8b2674c5f8098623482d1f458eef47edbbbf/adbf1ead-fa99-494c-b47c-d996f677e6aa.jpg?raw=true");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.30;
+  z-index: 0;
+}
 
-    .welcome a:hover {
-      background: #b22222;
-      color: #000;
-    }
+.welcome-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  width: 100%;
+}
 
-    .tech-section {
-      background-color: #000;
-      padding: 60px 10vw;
-      color: white;
-    }
+.welcome h1 {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: 56px;
+  color: var(--main-yellow);
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
 
-    .tech-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: nowrap;
-    }
+@media (min-width: 769px) {
+  .welcome h1 span {
+    display: block;
+  }
+}
 
-    .tech-image {
-      max-width: 400px;
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
-    }
+.welcome p {
+  font-size: 20px;
+  line-height: 1.8;
+}
 
-    .tech-content {
-      max-width: 600px;
-    }
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
 
-    .tech-content h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 30px;
-      color: #b22222;
-      margin-bottom: 16px;
-    }
+.welcome a {
+  padding: 14px 28px;
+  border: 2px solid var(--main-yellow);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: 0.3s;
+}
 
-    .tech-content p {
-      font-size: 14px;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
+.welcome a:hover {
+  background: var(--main-yellow);
+  color: black;
+}
 
-    .tech-button {
-      text-decoration: none;
-      color: #b22222;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
+/* ================= EXPLORA SECTION ================= */
 
-    .tech-button:hover {
-      color: #ff4d4d;
-      padding-left: 4px;
-    }
+.explora-section {
+  background: lab(2.66% 0.7 1.53);
+  padding: 80px 20px;
+  text-align: center;
+}
 
-    @media (max-width: 768px) {
+.explora-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: 42px;
+  color: var(--main-yellow);
+  margin-bottom: 50px;
+}
 
-      .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0;
-      }
+.explora-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
 
-      .logo-container {
-        width: 100%;
-        margin-bottom: 2px;
-      }
+.explora-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-      .toggle-button {
-        display: block;
-        margin-left: auto;
-        margin-bottom: 4px;
-      }
+.explora-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
 
-      .nav {
-        flex-direction: column;
-        width: 100%;
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-        transform: translateY(-10px);
-        pointer-events: none;
-        transition: all 0.4s ease;
-      }
+.explora-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.75);
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+}
 
-      .nav.show {
-        max-height: 200px;
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-      }
+/* MOBILE */
 
-      .nav a {
-        width: 100%;
-        text-align: center;
-      }
+@media (max-width: 768px) {
 
-      .tech-container {
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        text-align: center;
-      }
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-      .tech-image {
-        max-width: 100%;
-      }
-    }
-  </style>
+  .toggle-button {
+    display: block;
+    margin-left: auto;
+    margin-bottom: 4px;
+  }
+
+  .nav {
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: all 0.4s ease;
+  }
+
+  .nav.show {
+    max-height: 200px;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .welcome {
+    min-height: 100vh;
+    padding: 100px 15px 30px 15px;
+  }
+
+  .welcome h1 {
+    font-size: 34px;
+  }
+
+  .welcome p {
+    font-size: 16px;
+  }
+
+  .explora-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+</style>
 </head>
 
 <body>
@@ -323,8 +323,8 @@
   <div class="header-content">
     <div class="logo-container">
       <a href="#" class="logo-link">
-        <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" alt="Logo Fundational Chaos" />
-        <div class="logo-text">
+        <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" alt="Logo">
+        <div>
           <div class="logo-title">Fundational Chaos</div>
           <div class="logo-subtitle">Comunidad de Roleplay</div>
         </div>
@@ -343,44 +343,57 @@
 <section class="maintenance">
   <h2>❝ Página en mantenimiento ❞</h2>
   <div class="highlight">¡ESTA PÁGINA SIGUE EN CREACIÓN!</div>
-  <p>Por favor espera para que se añada completamente todo el contenido faltante...</p>
 </section>
 
 <section class="welcome">
-  <h1>Bienvenido a Fundational Chaos</h1>
-  <p>
-    En estas tierras donde el destino y el caos se entrelazan, hallarás toda la información necesaria
-    para formar parte de una comunidad de roleplay ambientada en un mundo vivo, desafiante y forjado
-    bajo una atmósfera de fantasía medieval.
-  </p>
+  <div class="welcome-content">
+    <h1>
+      Bienvenido a <span>Fundational Chaos</span>
+    </h1>
+    <p>
+      Se parte de un mundo donde los nombres que marcaron la historia ya no pertenecen a los libros, sino que son parte de un mundo caotico 
+      donde se disputa la dominancia y el control de las calles... 
+    </p>
 
-  <div class="button-container">
-    <a href="https://chat.whatsapp.com/DyRZrrKUORQLjDEXIOi08R" target="_blank">Entrar al grupo</a>
+    <div class="button-container">
+      <a href="https://chat.whatsapp.com/DyRZrrKUORQLjDEXIOi08R" target="_blank">Entrar al grupo</a>
+    </div>
   </div>
 </section>
 
-<section class="tech-section" id="tecnicas">
-  <div class="tech-container">
-    <img src="https://github.com/ToxiPain/Uso_Data/blob/main/personaje-anime-bola-fuego-su-mano-bola-fuego-su-mano-generativa-ai_1034052-19701-9.webp?raw=true" alt="Técnica elemental" class="tech-image" />
-    <div class="tech-content">
-      <h2>Propone una técnica o habilidad elemental</h2>
-      <p>
-        Aquí podrás proponer tu propio concepto de habilidad o técnica para el rol.
-        Será enviada a nuestros administradores para considerar añadirla al apartado oficial.
-        Una vez acumuladas 5 propuestas, se elegirá una como ganadora y se otorgarán recompensas dentro del rol.
-      </p>
-      <a href="#formulario" class="tech-button">Ir al formulario ➜</a>
+<section class="explora-section">
+  <div class="explora-title">Explora:</div>
+
+  <div class="explora-grid">
+    <div class="explora-card">
+      <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
+      <div class="explora-text">Sección 1</div>
+    </div>
+
+    <div class="explora-card">
+      <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
+      <div class="explora-text">Sección 2</div>
+    </div>
+
+    <div class="explora-card">
+      <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
+      <div class="explora-text">Sección 3</div>
+    </div>
+
+    <div class="explora-card">
+      <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
+      <div class="explora-text">Sección 4</div>
     </div>
   </div>
 </section>
 
 <script>
-  function toggleNav() {
-    const nav = document.getElementById('navMenu');
-    const btn = document.getElementById('toggleBtn');
-    nav.classList.toggle('show');
-    btn.classList.toggle('rotate');
-  }
+function toggleNav() {
+  const nav = document.getElementById('navMenu');
+  const btn = document.getElementById('toggleBtn');
+  nav.classList.toggle('show');
+  btn.classList.toggle('rotate');
+}
 </script>
 
 </body>
