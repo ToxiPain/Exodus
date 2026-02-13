@@ -15,9 +15,7 @@
   --main-yellow: #f3ff07;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -120,9 +118,7 @@ header {
   transition: 0.3s;
 }
 
-.nav a:hover::after {
-  width: 100%;
-}
+.nav a:hover::after { width: 100%; }
 
 /* MAIN */
 
@@ -140,20 +136,12 @@ header {
   margin-bottom: 50px;
 }
 
-/* GRID */
-
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-  gap: 25px;
-}
-
-/* TARJETAS (SIN EFECTOS HOVER) */
+/* TARJETAS */
 
 .category-card {
   background: rgba(20,20,20,0.9);
   border-radius: 12px;
-  padding: 20px;
+  padding: 25px;
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255,255,255,0.1);
 }
@@ -161,51 +149,57 @@ header {
 .category-title {
   font-family: 'Cinzel', serif;
   color: var(--main-yellow);
-  font-size: 22px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  padding-bottom: 6px;
+  font-size: 24px;
+  margin-bottom: 25px;
 }
 
-/* DIVISOR ALFABÉTICO */
+/* BLOQUES ALFABÉTICOS */
 
-.alpha-divider {
+.alpha-block {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.alpha-letter {
   font-family: 'Cinzel', serif;
-  font-size: 28px;
+  font-size: 48px;
+  width: 60px;
   color: var(--main-yellow);
-  margin-top: 15px;
-  margin-bottom: 6px;
-  opacity: 0.8;
+  flex-shrink: 0;
 }
 
-/* LISTA PERSONAJES */
-
-.character-list {
+.alpha-list {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-.character-list li {
-  padding: 4px 0;
+/* PERSONAJES */
+
+.alpha-list li {
+  margin-bottom: 6px;
 }
 
-/* EFECTO CLICK PERSONAJES */
-
-.character-list a {
+.alpha-list a {
   color: white;
   text-decoration: none;
-  transition: 0.15s;
+  display: inline-block;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: 0.25s ease;
 }
 
-.character-list a:active {
+/* HOVER PERSONAJES */
+
+.alpha-list a:hover {
+  background-color: rgba(243,255,7,0.15);
   color: var(--main-yellow);
-  transform: scale(0.96);
+  transform: translateX(6px);
 }
 
 /* MOBILE */
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
   .header-content {
     flex-direction: column;
@@ -235,9 +229,10 @@ header {
     pointer-events: auto;
   }
 
-  .main-title {
-    font-size: 38px;
-  }
+  .main-title { font-size: 38px; }
+
+  .alpha-letter { font-size: 36px; width: 45px; }
+
 }
 
 </style>
@@ -271,49 +266,58 @@ header {
 
 <h1 class="main-title">Lista de personajes</h1>
 
-<div class="category-grid">
-
-<!-- LIDERES -->
 <div class="category-card">
+
 <div class="category-title">👑 Líderes</div>
 
-<ul class="character-list">
-
-<div class="alpha-divider">A</div>
+<!-- A -->
+<div class="alpha-block">
+<div class="alpha-letter">A</div>
+<ul class="alpha-list">
 <li><a href="../personajes/alejandro_magno.html">Alejandro Magno</a></li>
+</ul>
+</div>
 
-<div class="alpha-divider">C</div>
+<!-- C -->
+<div class="alpha-block">
+<div class="alpha-letter">C</div>
+<ul class="alpha-list">
 <li>Carlomagno</li>
 <li>Cleopatra</li>
+</ul>
+</div>
 
-<div class="alpha-divider">G</div>
+<!-- G -->
+<div class="alpha-block">
+<div class="alpha-letter">G</div>
+<ul class="alpha-list">
 <li>Genghis Khan</li>
 <li>George Washington</li>
+</ul>
+</div>
 
-<div class="alpha-divider">J</div>
+<!-- J -->
+<div class="alpha-block">
+<div class="alpha-letter">J</div>
+<ul class="alpha-list">
 <li>Julio César</li>
+</ul>
+</div>
 
-<div class="alpha-divider">N</div>
+<!-- N -->
+<div class="alpha-block">
+<div class="alpha-letter">N</div>
+<ul class="alpha-list">
 <li>Napoleón Bonaparte</li>
-
-<div class="alpha-divider">O</div>
-<li>Oda Nobunaga</li>
-
-<div class="alpha-divider">R</div>
-<li>Ramsés II</li>
-
-<div class="alpha-divider">S</div>
-<li>Simón Bolívar</li>
-<li>Sun Tzu</li>
-
 </ul>
 </div>
 
 </div>
+
 </div>
 
 <script>
-function toggleNav() {
+function toggleNav(){
   const nav = document.getElementById("navMenu");
   const btn = document.getElementById("toggleBtn");
 
