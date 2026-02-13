@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
@@ -191,9 +191,9 @@ header {
 .welcome p {
   font-size: 20px;
   line-height: 1.8;
-  text-align: left;   /* 👈 Esto es lo único importante */
-  margin: 0 auto;     /* mantiene el bloque centrado */
-  max-width: 800px;   /* evita que sea demasiado ancho */
+  text-align: left;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 .button-container {
@@ -218,8 +218,6 @@ header {
   color: black;
 }
 
-/* NUEVO: MÁS INFORMACIÓN */
-
 .more-info {
   margin-top: 18px;
   font-family: 'Cinzel', serif;
@@ -234,12 +232,18 @@ header {
   text-decoration: underline;
 }
 
-/* ================= EXPLORA SECTION ================= */
+/* ================= EXPLORA SECTION NUEVO ================= */
 
 .explora-section {
-  background: lab(2.66% 0.7 1.53);
+  position: relative;
   padding: 80px 20px;
   text-align: center;
+  background:
+    linear-gradient(rgba(94,70,40,0.88), rgba(94,70,40,0.88)),
+    url("https://www.transparenttextures.com/patterns/old-map.png"),
+    url("https://www.transparenttextures.com/patterns/aged-paper.png");
+  background-size: cover, 700px, 500px;
+  background-blend-mode: multiply;
 }
 
 .explora-title {
@@ -367,18 +371,13 @@ header {
 
 <section class="welcome">
   <div class="welcome-content">
-    <h1>
-      Bienvenido a <span>Fundational Chaos</span>
-    </h1>
+    <h1>Bienvenido a <span>Fundational Chaos</span></h1>
     <p>
-      Se parte de un mundo donde los nombres que marcaron la historia ya no pertenecen a los libros, en Fundational Chaos son parte de un mundo caotico 
-      donde se disputa la dominancia y el control de las calles... Una carrera por la gloria entre facciones desde crimen organizado, terrorismo, gobierno, investigadores, elites y mucho mas. 
+      Se parte de un mundo donde los nombres que marcaron la historia ya no pertenecen a los libros, en Fundational Chaos son parte de un mundo caotico donde se disputa la dominancia y el control de las calles...
     </p>
 
     <div class="button-container">
       <a href="https://chat.whatsapp.com/CI42uWkG2RaBHymWi2Z40x" target="_blank" class="main-button">Entrar al grupo</a>
-
-      <!-- NUEVO -->
       <a href="informacion/" class="more-info">Más información...</a>
     </div>
   </div>
@@ -408,12 +407,10 @@ header {
 
 <script>
 
-/* LIMPIA index.html DE LA URL */
 if (window.location.pathname.endsWith("index.html")) {
   history.replaceState(null, null, window.location.pathname.replace("index.html", ""));
 }
 
-/* LIMPIA informacion.html DE LA URL */
 if (window.location.pathname.endsWith("informacion.html")) {
   history.replaceState(null, null, window.location.pathname.replace("informacion.html", "informacion/"));
 }
