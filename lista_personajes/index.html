@@ -90,6 +90,11 @@ header {
   border-radius: 4px;
   padding: 2px 6px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.toggle-button.rotate {
+  transform: rotate(180deg);
 }
 
 .nav {
@@ -137,7 +142,7 @@ header {
   margin-bottom: 50px;
 }
 
-/* GRID CATEGORIAS */
+/* GRID */
 
 .category-grid {
   display: grid;
@@ -170,6 +175,8 @@ header {
   padding-bottom: 6px;
 }
 
+/* LISTA PERSONAJES */
+
 .character-list {
   list-style: none;
   padding: 0;
@@ -178,7 +185,19 @@ header {
 
 .character-list li {
   padding: 4px 0;
-  opacity: 0.9;
+}
+
+/* LINKS PERSONAJES */
+
+.character-list a {
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.character-list a:hover {
+  color: var(--main-yellow);
+  padding-left: 5px;
 }
 
 /* MOBILE */
@@ -201,12 +220,16 @@ header {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: 0.4s;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: all 0.4s ease;
   }
 
   .nav.show {
     max-height: 200px;
     opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .main-title {
@@ -230,7 +253,7 @@ header {
       </div>
     </a>
 
-    <button class="toggle-button" onclick="toggleNav()">▼</button>
+    <button class="toggle-button" onclick="toggleNav()" id="toggleBtn">▼</button>
 
     <nav class="nav" id="navMenu">
       <a href="../">INICIO</a>
@@ -251,7 +274,11 @@ header {
 <div class="category-card">
 <div class="category-title">👑 Líderes</div>
 <ul class="character-list">
-<li>Alejandro Magno</li>
+
+<li>
+<a href="../personajes/alejandro_magno.html">Alejandro Magno</a>
+</li>
+
 <li>Julio César</li>
 <li>Napoleón Bonaparte</li>
 <li>Cleopatra</li>
@@ -262,6 +289,7 @@ header {
 <li>Oda Nobunaga</li>
 <li>George Washington</li>
 <li>Carlomagno</li>
+
 </ul>
 </div>
 
@@ -293,88 +321,16 @@ header {
 </ul>
 </div>
 
-<!-- ESCRITORES -->
-<div class="category-card">
-<div class="category-title">✒️ Escritores</div>
-<ul class="character-list">
-<li>William Shakespeare</li>
-<li>Edgar Allan Poe</li>
-<li>H.P. Lovecraft</li>
-<li>Gabriel García Márquez</li>
-<li>George Orwell</li>
-<li>Franz Kafka</li>
-<li>Julio Verne</li>
-</ul>
-</div>
-
-<!-- FILOSOFOS -->
-<div class="category-card">
-<div class="category-title">🧠 Filósofos</div>
-<ul class="character-list">
-<li>Sócrates</li>
-<li>Platón</li>
-<li>Aristóteles</li>
-<li>Nietzsche</li>
-<li>Maquiavelo</li>
-<li>Karl Marx</li>
-<li>Descartes</li>
-</ul>
-</div>
-
-<!-- ARTISTAS -->
-<div class="category-card">
-<div class="category-title">🎨 Artistas</div>
-<ul class="character-list">
-<li>Leonardo da Vinci</li>
-<li>Vincent van Gogh</li>
-<li>Frida Kahlo</li>
-<li>Michael Jackson</li>
-<li>Freddie Mercury</li>
-<li>Pablo Picasso</li>
-<li>Charlie Chaplin</li>
-</ul>
-</div>
-
-<!-- MISTICOS -->
-<div class="category-card">
-<div class="category-title">🔮 Místicos</div>
-<ul class="character-list">
-<li>Rasputín</li>
-<li>Nostradamus</li>
-<li>Aleister Crowley</li>
-<li>Jesús de Nazareth</li>
-<li>Siddhartha Gautama</li>
-</ul>
-</div>
-
-<!-- CRIMINALES -->
-<div class="category-card">
-<div class="category-title">🔪 Criminales</div>
-<ul class="character-list">
-<li>Jack el Destripador</li>
-<li>Al Capone</li>
-<li>Ted Bundy</li>
-<li>DB Cooper</li>
-</ul>
-</div>
-
-<!-- EXPLORADORES -->
-<div class="category-card">
-<div class="category-title">🌎 Exploradores</div>
-<ul class="character-list">
-<li>Neil Armstrong</li>
-<li>Yuri Gagarin</li>
-<li>Cristóbal Colón</li>
-<li>Marco Polo</li>
-</ul>
-</div>
-
 </div>
 </div>
 
 <script>
 function toggleNav() {
-  document.getElementById("navMenu").classList.toggle("show");
+  const nav = document.getElementById("navMenu");
+  const btn = document.getElementById("toggleBtn");
+
+  nav.classList.toggle("show");
+  btn.classList.toggle("rotate");
 }
 </script>
 
