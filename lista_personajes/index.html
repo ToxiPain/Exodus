@@ -26,8 +26,6 @@ body {
   background: url("https://github.com/ToxiPain/Uso_Data/blob/8aba7918529dd2cec03b738832979a3369d31a74/desktop-wallpaper-the-moon-london-dark-london-for-section-%D1%80%D0%B5%D0%BD%D0%B4%D0%B5%D1%80%D0%B8%D0%BD%D0%B3.jpg?raw=true") center/cover fixed;
 }
 
-/* Overlay oscuro */
-
 body::before {
   content: "";
   position: fixed;
@@ -150,7 +148,7 @@ header {
   gap: 25px;
 }
 
-/* TARJETAS */
+/* TARJETAS (SIN EFECTOS HOVER) */
 
 .category-card {
   background: rgba(20,20,20,0.9);
@@ -158,12 +156,6 @@ header {
   padding: 20px;
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255,255,255,0.1);
-  transition: 0.3s;
-}
-
-.category-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 20px rgba(243,255,7,0.3);
 }
 
 .category-title {
@@ -173,6 +165,17 @@ header {
   margin-bottom: 15px;
   border-bottom: 1px solid rgba(255,255,255,0.2);
   padding-bottom: 6px;
+}
+
+/* DIVISOR ALFABÉTICO */
+
+.alpha-divider {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  color: var(--main-yellow);
+  margin-top: 15px;
+  margin-bottom: 6px;
+  opacity: 0.8;
 }
 
 /* LISTA PERSONAJES */
@@ -187,17 +190,17 @@ header {
   padding: 4px 0;
 }
 
-/* LINKS PERSONAJES */
+/* EFECTO CLICK PERSONAJES */
 
 .character-list a {
   color: white;
   text-decoration: none;
-  transition: 0.2s;
+  transition: 0.15s;
 }
 
-.character-list a:hover {
+.character-list a:active {
   color: var(--main-yellow);
-  padding-left: 5px;
+  transform: scale(0.96);
 }
 
 /* MOBILE */
@@ -243,25 +246,25 @@ header {
 <body>
 
 <header>
-  <div class="header-content">
+<div class="header-content">
 
-    <a href="../" class="logo-link">
-      <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
-      <div>
-        <div class="logo-title">Fundational Chaos</div>
-        <div class="logo-subtitle">Comunidad de Roleplay</div>
-      </div>
-    </a>
+<a href="../" class="logo-link">
+<img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
+<div>
+<div class="logo-title">Fundational Chaos</div>
+<div class="logo-subtitle">Comunidad de Roleplay</div>
+</div>
+</a>
 
-    <button class="toggle-button" onclick="toggleNav()" id="toggleBtn">▼</button>
+<button class="toggle-button" onclick="toggleNav()" id="toggleBtn">▼</button>
 
-    <nav class="nav" id="navMenu">
-      <a href="../">INICIO</a>
-      <a href="#">PROPONER TÉCNICAS</a>
-      <a href="#">ESTOY BUSCANDO...</a>
-    </nav>
+<nav class="nav" id="navMenu">
+<a href="../">INICIO</a>
+<a href="#">PROPONER TÉCNICAS</a>
+<a href="#">ESTOY BUSCANDO...</a>
+</nav>
 
-  </div>
+</div>
 </header>
 
 <div class="main-container">
@@ -273,51 +276,36 @@ header {
 <!-- LIDERES -->
 <div class="category-card">
 <div class="category-title">👑 Líderes</div>
+
 <ul class="character-list">
 
-<li>
-<a href="../personajes/alejandro_magno.html">Alejandro Magno</a>
-</li>
+<div class="alpha-divider">A</div>
+<li><a href="../personajes/alejandro_magno.html">Alejandro Magno</a></li>
 
-<li>Julio César</li>
-<li>Napoleón Bonaparte</li>
-<li>Cleopatra</li>
-<li>Sun Tzu</li>
-<li>Ramsés II</li>
-<li>Genghis Khan</li>
-<li>Simón Bolívar</li>
-<li>Oda Nobunaga</li>
-<li>George Washington</li>
+<div class="alpha-divider">C</div>
 <li>Carlomagno</li>
+<li>Cleopatra</li>
 
-</ul>
-</div>
+<div class="alpha-divider">G</div>
+<li>Genghis Khan</li>
+<li>George Washington</li>
 
-<!-- GUERREROS -->
-<div class="category-card">
-<div class="category-title">⚔️ Guerreros</div>
-<ul class="character-list">
-<li>Miyamoto Musashi</li>
-<li>Juana de Arco</li>
-<li>Leonidas I</li>
-<li>Bruce Lee</li>
-<li>Ragnar Lodbrok</li>
-<li>Yasuke</li>
-<li>Espartaco</li>
-</ul>
-</div>
+<div class="alpha-divider">J</div>
+<li>Julio César</li>
 
-<!-- CIENTIFICOS -->
-<div class="category-card">
-<div class="category-title">🧪 Científicos</div>
-<ul class="character-list">
-<li>Nikola Tesla</li>
-<li>Isaac Newton</li>
-<li>Marie Curie</li>
-<li>Albert Einstein</li>
-<li>Charles Darwin</li>
-<li>Alan Turing</li>
-<li>Stephen Hawking</li>
+<div class="alpha-divider">N</div>
+<li>Napoleón Bonaparte</li>
+
+<div class="alpha-divider">O</div>
+<li>Oda Nobunaga</li>
+
+<div class="alpha-divider">R</div>
+<li>Ramsés II</li>
+
+<div class="alpha-divider">S</div>
+<li>Simón Bolívar</li>
+<li>Sun Tzu</li>
+
 </ul>
 </div>
 
