@@ -195,11 +195,12 @@ header {
 
 .button-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 40px;
 }
 
-.welcome a {
+.welcome a.main-button {
   padding: 14px 28px;
   border: 2px solid var(--main-yellow);
   color: white;
@@ -209,9 +210,25 @@ header {
   transition: 0.3s;
 }
 
-.welcome a:hover {
+.welcome a.main-button:hover {
   background: var(--main-yellow);
   color: black;
+}
+
+/* NUEVO: MÁS INFORMACIÓN */
+
+.more-info {
+  margin-top: 18px;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--main-yellow);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.more-info:hover {
+  text-decoration: underline;
 }
 
 /* ================= EXPLORA SECTION ================= */
@@ -322,7 +339,7 @@ header {
 <header>
   <div class="header-content">
     <div class="logo-container">
-      <a href="#" class="logo-link">
+      <a href="./" class="logo-link">
         <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true" alt="Logo">
         <div>
           <div class="logo-title">Fundational Chaos</div>
@@ -356,30 +373,29 @@ header {
     </p>
 
     <div class="button-container">
-      <a href="https://chat.whatsapp.com/CI42uWkG2RaBHymWi2Z40x" target="_blank">Entrar al grupo</a>
+      <a href="https://chat.whatsapp.com/CI42uWkG2RaBHymWi2Z40x" target="_blank" class="main-button">Entrar al grupo</a>
+
+      <!-- NUEVO -->
+      <a href="informacion.html" class="more-info">Más información...</a>
     </div>
   </div>
 </section>
 
 <section class="explora-section">
   <div class="explora-title">Explora:</div>
-
-<a href="informacion.html" class="explora-card">
-  <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
-  <div class="explora-text">Sección 1</div>
-</a>
-
-
+  <div class="explora-grid">
+    <div class="explora-card">
+      <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
+      <div class="explora-text">Sección 1</div>
+    </div>
     <div class="explora-card">
       <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
       <div class="explora-text">Sección 2</div>
     </div>
-
     <div class="explora-card">
       <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
       <div class="explora-text">Sección 3</div>
     </div>
-
     <div class="explora-card">
       <img src="https://github.com/ToxiPain/Uso_Data/blob/main/9bdbe9ca2656eb5554e942505d0fd9ef.jpg?raw=true">
       <div class="explora-text">Sección 4</div>
@@ -388,12 +404,24 @@ header {
 </section>
 
 <script>
+
+/* LIMPIA index.html DE LA URL */
+if (window.location.pathname.endsWith("index.html")) {
+  history.replaceState(null, null, window.location.pathname.replace("index.html", ""));
+}
+
+/* LIMPIA informacion.html DE LA URL */
+if (window.location.pathname.endsWith("informacion.html")) {
+  history.replaceState(null, null, window.location.pathname.replace("informacion.html", "informacion/"));
+}
+
 function toggleNav() {
   const nav = document.getElementById('navMenu');
   const btn = document.getElementById('toggleBtn');
   nav.classList.toggle('show');
   btn.classList.toggle('rotate');
 }
+
 </script>
 
 </body>
